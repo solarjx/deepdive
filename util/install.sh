@@ -162,7 +162,7 @@ select_release() {
 }
 list_deepdive_releases() {
     # find all links to a GitHub tree from the release page
-    get-url "$GITHUB_BASEURL"/releases/ | sed '
+    get-url https://github.com/HazyResearch/deepdive/releases/ | sed '
         \:/.*/tree/:!d
         s/.*href="//; s/".*$//
         s:.*/tree/::
@@ -181,7 +181,7 @@ install_deepdive_from_release() {
         *) error "$os-$arch: No binary release available for your OS" "DeepDive must be installed from source"
     esac
     local tarball="deepdive-${RELEASE}-${os}.tar.gz"
-    local url="$GITHUB_BASEURL/releases/download/${RELEASE}/$tarball"
+    local url="https://github.com/HazyResearch/deepdive/releases/download/${RELEASE}/$tarball"
     (
     # showing what is going on
     set -x
