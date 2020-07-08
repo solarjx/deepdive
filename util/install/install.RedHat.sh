@@ -29,7 +29,7 @@ install__deepdive_build_deps() {
         grep
         bc
         perl
-        python
+        python2
         java
         # bash
         bison
@@ -65,7 +65,7 @@ install__deepdive_runtime_deps() {
         grep
         bc
         perl
-        python
+        python2
         java
         gnuplot
         libtool-ltdl # for graphviz
